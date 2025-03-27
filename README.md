@@ -1,1 +1,1 @@
-# WPI-Analysis-Toolkit
+# WPI Analysis Toolkit
