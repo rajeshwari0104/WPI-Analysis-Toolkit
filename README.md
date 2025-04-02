@@ -1,10 +1,10 @@
 # WPI-Analysis-Toolkit
 A Python-based analytical toolbox for studying Wholesale Price Index (WPI) trends in India.
-Overview
+<h2>Overview<h2>
 
 The Wholesale Price Index (WPI) serves as a key economic indicator, tracking price movements in India's wholesale markets. This Python toolbox provides a comprehensive suite of analytical tools for examining WPI trends, computing inflation rates, comparing major commodity groups, and employing machine learning models for forecasting.
 
-Features
+<h2>Features<h2>
 
 The toolbox includes the following analytical modules:
 1.Time Series Analysis of WPI Trends
@@ -47,31 +47,31 @@ Highlights geographic disparities in wholesale price movements.
 Implements anomaly detection algorithms to identify unusual spikes or drops in WPI.
 Helps in detecting data inconsistencies or significant economic events.
 
-Installation
+<h2>Installation<h2>
 
 To use this toolbox, clone the repository and install the required dependencies:
 git clone https://github.com/rajeshwari0104/wpi-analysis-toolkit.git
 cd wpi-analysis-toolkit
 pip install -r requirements.txt
 
-Usage
+<h2>Usage<h2>
 
 Each module can be executed separately or combined for comprehensive analysis. Example usage:
 from wpi_toolbox import wpi_trend_analysis
 wpi_trend_analysis.analyze_trends(r"C:\Users\user\Downloads\wholesale_price.xlsx")
 
-Data Sources
+<h2>Data Sources<h2>
 
 The toolbox is designed to work with publicly available WPI datasets from government and economic research sources.
 
-License
+<h2>License<h2>
 
 This project is licensed under the MIT License.
 
-Contributors
+<h2>Contributors<h2>
 
 Rajeshwari Thapa (thaparajeshwari0104@gmail.com)
 
-Acknowledgments
+<h2>Acknowledgments<h2>
 
 Special thanks to economic research institutions and open data sources for providing WPI datasets.
