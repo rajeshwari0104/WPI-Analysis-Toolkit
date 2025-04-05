@@ -23,29 +23,23 @@ The toolbox includes the following analytical modules:
 
 2.Inflation Rate Calculation Based on WPI Computes month-over-month and year-over-year inflation rates. Provides insights into inflationary trends in wholesale markets.
 
-3.Comparison of WPI Across Major Commodity Groups Evaluates WPI trends among Primary Articles, Fuel & Power, and Manufactured Products. Assesses their contributions to overall price changes.
+3.Seasonal Variation Analysis in Primary Articles Examines seasonal variations in the WPI of agricultural and other primary articles. Identifies periods of price volatility and potential causes.
 
-4.Impact of Fuel & Power Prices on Overall WPI Investigates correlation between Fuel & Power subgroup index and overall WPI. Analyzes how fluctuations in energy prices influence wholesale price levels.
+4.Assessing the Impact of Policy Changes on WPI Analyzes structural breaks or shifts in WPI due to major economic policies or events. Evaluates the impact of tax reforms, subsidies, and other policy changes.
 
-5.Seasonal Variation Analysis in Primary Articles Examines seasonal variations in the WPI of agricultural and other primary articles. Identifies periods of price volatility and potential causes.
-
-6.Forecasting WPI Using Machine Learning Models Develops predictive models using machine learning techniques. Forecasts future WPI values for economic planning and decision-making.
-
-7.Assessing the Impact of Policy Changes on WPI Analyzes structural breaks or shifts in WPI due to major economic policies or events. Evaluates the impact of tax reforms, subsidies, and other policy changes.
-
-8.Correlation Between WPI and Consumer Price Index (CPI) Explores the relationship between WPI and CPI. Assesses how changes in wholesale prices affect retail prices.
-
-9.Visualization of WPI Data Across Geographic Regions Creates visual representations of WPI variations across states/regions. Highlights geographic disparities in wholesale price movements.
-
-10.Identifying Anomalies in WPI Data Implements anomaly detection algorithms to identify unusual spikes or drops in WPI. Helps in detecting data inconsistencies or significant economic events.
+5.Identifying Anomalies in WPI Data Implements anomaly detection algorithms to identify unusual spikes or drops in WPI. Helps in detecting data inconsistencies or significant economic events.
 
 **Installation**
 
-To use this toolbox, clone the repository and install the required dependencies: git clone https://github.com/rajeshwari0104/wpi-analysis-toolkit.git cd wpi-analysis-toolkit pip install -r requirements.txt
+To use this toolbox, clone the repository and install the required dependencies: 
+git clone https://github.com/rajeshwari0104/wpi-analysis-toolkit.git 
+cd wpi-analysis-toolkit 
+pip install -r requirements.txt
 
 **Usage**
 
-Each module can be executed separately or combined for comprehensive analysis. Example usage: from wpi_toolbox import wpi_trend_analysis wpi_trend_analysis.analyze_trends(r"C:\Users\user\Downloads\wholesale_price.xlsx")
+Each module can be executed separately or combined for comprehensive analysis. 
+Example usage: from wpi_toolbox import wpi_trend_analysis wpi_trend_analysis.analyze_trends(r"C:\Users\user\Downloads\wholesale_price.xlsx")
 
 **Data Sources**
 
@@ -63,4 +57,4 @@ Rajeshwari Thapa (thaparajeshwari0104@gmail.com)
 **Acknowledgments**
 
 Special thanks to economic research institutions and open data sources for providing WPI datasets.
- 0a75837 (Improved README formatting)
+ 
