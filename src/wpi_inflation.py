@@ -16,56 +16,89 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset
+# 🌈 Set a beautiful theme
+sns.set_theme(style="whitegrid")
+
+# 📂 Load Dataset
 file_path = r"C:\Users\user\Downloads\wholesale_price.xlsx"
 df = pd.read_excel(file_path)
 
-# Identify time-based columns
+# 🔍 Identify Time Columns
 date_columns = [col for col in df.columns if col.startswith('INDX')]
 
-# Convert data to time-series format
-df_melted = df.melt(id_vars=['COMM_NAME'], value_vars=date_columns, var_name="Date", value_name="WPI")
-df_melted["Date"] = pd.to_datetime(df_melted["Date"].str[4:], format='%m%Y')  # Extracting month-year
+# 🔄 Transform to Long Format
+df_long = df.melt(
+    id_vars=['COMM_NAME'],
+    value_vars=date_columns,
+    var_name="Date",
+    value_name="WPI"
+)
 
-# Handle missing values
-df_melted['WPI'] = df_melted['WPI'].ffill()
-df_melted.dropna(inplace=True)
+# 🧼 Clean Dates
+df_long["Date"] = pd.to_datetime(df_long["Date"].str[4:], format='%m%Y')
 
-# Aggregate WPI by month (overall index)
-df_time_series = df_melted.groupby("Date")["WPI"].mean()
+# 🛠 Handle Missing Values
+df_long['WPI'] = df_long['WPI'].ffill()
+df_long.dropna(inplace=True)
 
-# Compute MoM Inflation Rate
-df_time_series = df_time_series.to_frame()
-df_time_series['MoM Inflation'] = df_time_series['WPI'].pct_change() * 100
+# 📊 Average WPI per Month
+df_ts = df_long.groupby("Date")["WPI"].mean().to_frame()
 
-# Compute YoY Inflation Rate (compared to the same month of the previous year)
-df_time_series['YoY Inflation'] = df_time_series['WPI'].pct_change(periods=12) * 100
+# 📈 Inflation Calculations
+df_ts["MoM Inflation (%)"] = df_ts["WPI"].pct_change() * 100
+df_ts["YoY Inflation (%)"] = df_ts["WPI"].pct_change(periods=12) * 100
 
-# Plot MoM Inflation
-plt.figure(figsize=(12, 6))
-plt.plot(df_time_series.index, df_time_series['MoM Inflation'], marker='o', linestyle='-', color='blue', label="MoM Inflation")
-plt.axhline(0, color='black', linewidth=1, linestyle='--')
-plt.title("Month-over-Month (MoM) Inflation Rate")
-plt.xlabel("Year")
+# ------------------------------------------------------
+# 📈 Plot: Month-over-Month Inflation
+# ------------------------------------------------------
+plt.figure(figsize=(14, 6))
+plt.plot(df_ts.index, df_ts["MoM Inflation (%)"], marker='o', color="#1f77b4", label="MoM Inflation")
+plt.axhline(0, color='gray', linestyle='--', linewidth=1)
+plt.title("📅 Month-over-Month (MoM) Inflation Rate", fontsize=16)
+plt.xlabel("Date")
 plt.ylabel("Inflation Rate (%)")
+plt.xticks(rotation=45)
 plt.legend()
-plt.grid(True)
+plt.grid(alpha=0.3)
+plt.tight_layout()
 plt.show()
 
-# Plot YoY Inflation
-plt.figure(figsize=(12, 6))
-plt.plot(df_time_series.index, df_time_series['YoY Inflation'], marker='o', linestyle='-', color='red', label="YoY Inflation")
-plt.axhline(0, color='black', linewidth=1, linestyle='--')
-plt.title("Year-over-Year (YoY) Inflation Rate")
-plt.xlabel("Year")
+# ------------------------------------------------------
+# 📈 Plot: Year-over-Year Inflation
+# ------------------------------------------------------
+plt.figure(figsize=(14, 6))
+plt.plot(df_ts.index, df_ts["YoY Inflation (%)"], marker='s', color="#d62728", label="YoY Inflation")
+plt.axhline(0, color='gray', linestyle='--', linewidth=1)
+plt.title("📆 Year-over-Year (YoY) Inflation Rate", fontsize=16)
+plt.xlabel("Date")
 plt.ylabel("Inflation Rate (%)")
+plt.xticks(rotation=45)
 plt.legend()
-plt.grid(True)
+plt.grid(alpha=0.3)
+plt.tight_layout()
 plt.show()
 
-# Display summary statistics
-print("Summary Statistics:")
-print(df_time_series.describe())
+# ------------------------------------------------------
+# 📋 Summary Statistics Table
+# ------------------------------------------------------
+print("\n📊 Summary Statistics for WPI and Inflation Rates:\n")
+try:
+    styled_table = df_ts.describe().round(2).style.set_caption("🧮 Descriptive Statistics")\
+        .set_table_styles([{
+            'selector': 'caption',
+            'props': [('font-size', '16px'), ('text-align', 'left'), ('color', 'black')]
+        }])\
+        .background_gradient(cmap='YlGnBu', axis=1)
+
+    from IPython.display import display
+    display(styled_table)
+
+except ImportError:
+    print("\n🧮 Descriptive Statistics (Basic Output):\n")
+    print(df_ts.describe().round(2))
+
+
+
 
 ##Expected Insights:
 ##MoM Inflation: Helps identify short-term inflationary trends.
