@@ -29,7 +29,7 @@ if commodity not in df_long["COMM_NAME"].unique():
 
 commodity_df = df_long[df_long["COMM_NAME"] == commodity].sort_values("Date")
 
-# --- 🎨 PLOT 1: Basic WPI Timeline ---
+# --- PLOT 1: Basic WPI Timeline ---
 plt.figure(figsize=(14, 6))
 sns.lineplot(data=commodity_df, x="Date", y="WPI", marker='o', linewidth=2, color="steelblue")
 plt.axvline(pd.to_datetime("2016-07-01"), color='crimson', linestyle='--', linewidth=2, label='GST Introduction')
@@ -40,12 +40,12 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-# --- 📊 Rolling Stats ---
+# ---  Rolling Stats ---
 window = 6
 commodity_df["RollingMean"] = commodity_df["WPI"].rolling(window=window).mean()
 commodity_df["RollingStd"] = commodity_df["WPI"].rolling(window=window).std()
 
-# --- 🎨 PLOT 2: WPI with Rolling Mean/Std ---
+# ---  PLOT 2: WPI with Rolling Mean/Std ---
 plt.figure(figsize=(14, 6))
 sns.lineplot(data=commodity_df, x="Date", y="WPI", label="WPI", alpha=0.5, color="gray")
 sns.lineplot(data=commodity_df, x="Date", y="RollingMean", label=f"{window}-Month Rolling Mean", color="seagreen", linewidth=2)
@@ -58,12 +58,12 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-# --- 📉 Event Comparison ---
+# --- Event Comparison ---
 event_date = pd.to_datetime("2016-07-01")
 pre_event = commodity_df[commodity_df["Date"] < event_date]["WPI"]
 post_event = commodity_df[commodity_df["Date"] >= event_date]["WPI"]
 
-# --- 🧠 Insights Summary ---
+# ---  Insights Summary ---
 pre_avg = pre_event.mean()
 post_avg = post_event.mean()
 diff = post_avg - pre_avg

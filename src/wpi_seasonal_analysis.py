@@ -43,7 +43,7 @@ df_time_series = df_melted.groupby("Date")["WPI"].mean()
 # Decompose time series
 decomposition = seasonal_decompose(df_time_series, model="additive", period=12)
 
-# 🎨 Enhanced Plot
+# Enhanced Plot
 fig, axes = plt.subplots(4, 1, figsize=(14, 10), sharex=True)
 fig.suptitle("📊 Seasonal Decomposition of WPI – Primary Articles", fontsize=16, weight='bold')
 
@@ -67,7 +67,7 @@ plt.xlabel("Date")
 plt.tight_layout(rect=[0, 0, 1, 0.97])
 plt.show()
 
-# 🧠 Optional: Summary Stats
+#  Optional: Summary Stats
 print("\n📌 WPI Decomposition Summary:")
 print(f"🕰️ Time Range: {df_time_series.index.min().date()} to {df_time_series.index.max().date()}")
 print(f"📉 Mean WPI: {df_time_series.mean():.2f}")
