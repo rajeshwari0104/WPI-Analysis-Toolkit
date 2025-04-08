@@ -1,6 +1,6 @@
 # WPI-Analysis-Toolkit
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 
 A Python-based analytical toolbox for studying Wholesale Price Index (WPI) trends in India.
