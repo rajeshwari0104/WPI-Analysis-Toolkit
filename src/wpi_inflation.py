@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set a beautiful theme
+
 sns.set_theme(style="whitegrid")
 
 # Load Dataset
