@@ -1,60 +1,58 @@
 # WPI-Analysis-Toolkit
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+
 A Python-based analytical toolbox for studying Wholesale Price Index (WPI) trends in India.
 
-## Table of Contents  
-- [Overview](#overview)  
-- [Features](#features)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Data Sources](#data-sources)  
-- [License](#license)  
-- [Contributors](#contributors)  
-- [Acknowledgments](#acknowledgments)  
+---
 
+## 📑 Table of Contents
 
-**Overview**
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Data Sources](#data-sources)
+- [License](#license)
+- [Contributors](#contributors)
+- [Acknowledgments](#acknowledgments)
 
-The Wholesale Price Index (WPI) serves as a key economic indicator, tracking price movements in India's wholesale markets. This Python toolbox provides a comprehensive suite of analytical tools for examining WPI trends, computing inflation rates, comparing major commodity groups, and employing machine learning models for forecasting.
+---
 
-**Features**
+## 📊 Overview
 
-The toolbox includes the following analytical modules: 
-1.Time Series Analysis of WPI Trends Analyzes monthly WPI data from 2011-12 onward. Identifies long-term trends, seasonal patterns, and cyclical behaviors.
+The Wholesale Price Index (WPI) is a key economic indicator in India. This Python toolkit helps analyze WPI trends, calculate inflation rates, compare commodity groups, and forecast using machine learning models.
 
-2.Inflation Rate Calculation Based on WPI Computes month-over-month and year-over-year inflation rates. Provides insights into inflationary trends in wholesale markets.
+---
 
-3.Seasonal Variation Analysis in Primary Articles Examines seasonal variations in the WPI of agricultural and other primary articles. Identifies periods of price volatility and potential causes.
+## ✨ Features
 
-4.Assessing the Impact of Policy Changes on WPI Analyzes structural breaks or shifts in WPI due to major economic policies or events. Evaluates the impact of tax reforms, subsidies, and other policy changes.
+- 📈 **Time Series Analysis**  
+  Analyze monthly WPI data to identify trends, seasonality, and cycles.
 
-5.Identifying Anomalies in WPI Data Implements anomaly detection algorithms to identify unusual spikes or drops in WPI. Helps in detecting data inconsistencies or significant economic events.
+- 🔢 **Inflation Rate Calculation**  
+  Calculate MoM and YoY inflation from WPI data.
 
-**Installation**
+- 🌾 **Seasonal Variation in Primary Articles**  
+  Understand seasonal patterns in agricultural and other primary goods.
 
-To use this toolbox, clone the repository and install the required dependencies: 
-git clone https://github.com/rajeshwari0104/wpi-analysis-toolkit.git 
-cd wpi-analysis-toolkit 
+- 🧾 **Policy Impact Analysis**  
+  Detect structural breaks due to GST, subsidies, etc.
+
+- ⚠️ **Anomaly Detection**  
+  Spot data inconsistencies or major economic events using algorithms.
+
+---
+
+## ⚙️ Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/rajeshwari0104/wpi-analysis-toolkit.git
+
+# Move into the folder
+cd wpi-analysis-toolkit
+
+# Install dependencies
 pip install -r requirements.txt
-
-**Usage**
-
-Each module can be executed separately or combined for comprehensive analysis. 
-Example usage: from wpi_toolbox import wpi_trend_analysis wpi_trend_analysis.analyze_trends(r"C:\Users\user\Downloads\wholesale_price.xlsx")
-
-**Data Sources**
-
-The toolbox is designed to work with publicly available WPI datasets from government and economic research sources.
-
-**License**  
-![License](https://img.shields.io/badge/license-MIT-blue)  
-
-This project is licensed under the MIT License.
-
-**Contributors**
-![GitHub Repo Stars](https://img.shields.io/github/stars/rajeshwari0104/wpi-analysis-toolkit?style=social)
-Rajeshwari Thapa (thaparajeshwari0104@gmail.com)
-
-**Acknowledgments**
-
-Special thanks to economic research institutions and open data sources for providing WPI datasets.
- 
