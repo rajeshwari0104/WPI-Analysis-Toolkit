@@ -1,3 +1,8 @@
+#Identifying Anomalies in WPI Data
+#Objective: Implement anomaly detection algorithms to identify and analyze unusual spikes or drops in WPI data, 
+# which could indicate data quality issues or significant economic events.
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -56,7 +61,7 @@ plt.scatter(z_anomalies.index, z_anomalies.values, color="crimson", label="Z-Sco
 plt.scatter(iqr_anomalies.index, iqr_anomalies.values, color="orange", label="IQR Anomalies", s=80, marker="x", linewidths=2)
 
 #  Plot Settings
-plt.title("📊 Wholesale Price Index Anomaly Detection", fontsize=16)
+plt.title("Wholesale Price Index Anomaly Detection", fontsize=16)
 plt.xlabel("Date", fontsize=12)
 plt.ylabel("WPI", fontsize=12)
 plt.legend()

@@ -45,7 +45,7 @@ decomposition = seasonal_decompose(df_time_series, model="additive", period=12)
 
 # Enhanced Plot
 fig, axes = plt.subplots(4, 1, figsize=(14, 10), sharex=True)
-fig.suptitle("📊 Seasonal Decomposition of WPI – Primary Articles", fontsize=16, weight='bold')
+fig.suptitle("Seasonal Decomposition of WPI – Primary Articles", fontsize=16, weight='bold')
 
 axes[0].plot(df_time_series, label="Original", color='royalblue')
 axes[0].legend(loc="upper left")
@@ -68,8 +68,8 @@ plt.tight_layout(rect=[0, 0, 1, 0.97])
 plt.show()
 
 #  Optional: Summary Stats
-print("\n📌 WPI Decomposition Summary:")
-print(f"🕰️ Time Range: {df_time_series.index.min().date()} to {df_time_series.index.max().date()}")
-print(f"📉 Mean WPI: {df_time_series.mean():.2f}")
-print(f"📈 Max WPI: {df_time_series.max():.2f}")
-print(f"📉 Min WPI: {df_time_series.min():.2f}")
+print("\n WPI Decomposition Summary:")
+print(f"Time Range: {df_time_series.index.min().date()} to {df_time_series.index.max().date()}")
+print(f"Mean WPI: {df_time_series.mean():.2f}")
+print(f"Max WPI: {df_time_series.max():.2f}")
+print(f"Min WPI: {df_time_series.min():.2f}")
