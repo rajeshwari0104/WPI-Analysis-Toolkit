@@ -1,3 +1,7 @@
+#Assessing the Impact of Policy Changes on WPI
+#Objective: Analyze the effects of significant economic policies or events (e.g., tax reforms, subsidies) on 
+# WPI by identifying structural breaks or shifts in the time series data.
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,7 +29,7 @@ if commodity not in df_long["COMM_NAME"].unique():
     print(f"⚠️ Commodity '{commodity}' not found. Showing a preview of available options:")
     print(df_long["COMM_NAME"].unique())
     commodity = df_long["COMM_NAME"].unique()[0]
-    print(f"\n🔁 Defaulting to: {commodity}")
+    print(f"\nDefaulting to: {commodity}")
 
 commodity_df = df_long[df_long["COMM_NAME"] == commodity].sort_values("Date")
 
@@ -33,9 +37,9 @@ commodity_df = df_long[df_long["COMM_NAME"] == commodity].sort_values("Date")
 plt.figure(figsize=(14, 6))
 sns.lineplot(data=commodity_df, x="Date", y="WPI", marker='o', linewidth=2, color="steelblue")
 plt.axvline(pd.to_datetime("2016-07-01"), color='crimson', linestyle='--', linewidth=2, label='GST Introduction')
-plt.title(f"📊 WPI Trend for {commodity}", fontsize=16, weight='bold')
-plt.xlabel("📅 Date", fontsize=12)
-plt.ylabel("📈 WPI Index", fontsize=12)
+plt.title(f"WPI Trend for {commodity}", fontsize=16, weight='bold')
+plt.xlabel("Date", fontsize=12)
+plt.ylabel("WPI Index", fontsize=12)
 plt.legend()
 plt.tight_layout()
 plt.show()
@@ -71,4 +75,4 @@ diff = post_avg - pre_avg
 print("**WPI Change Due to Policy Event**")
 print(f"Pre-GST Average WPI for {commodity}: {pre_avg:.2f}")
 print(f"Post-GST Average WPI for {commodity}: {post_avg:.2f}")
-print(f"Difference (Post - Pre): {diff:.2f} {'🔺' if diff > 0 else '🔻'}")
+print(f"Difference (Post - Pre): {diff:.2f}")

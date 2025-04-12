@@ -1,6 +1,6 @@
 #Time Series Analysis of WPI Trends
 #Objective: Analyze the monthly WPI data from 2011-12 up to the most recent month to identify long-term trends, seasonal patterns, 
-# and cyclical behaviors in wholesale prices.​
+# and cyclical behaviors in wholesale prices.
 
 import pandas as pd
 import matplotlib.pyplot as plt

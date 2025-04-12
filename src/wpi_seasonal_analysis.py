@@ -1,3 +1,7 @@
+#Seasonal Variation Analysis in Primary Articles
+#Objective: Examine the seasonal variations in the WPI of Primary Articles, such as agricultural products, to identify periods 
+# of price volatility and their potential causes.​
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
