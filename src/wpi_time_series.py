@@ -1,3 +1,7 @@
+#Time Series Analysis of WPI Trends
+#Objective: Analyze the monthly WPI data from 2011-12 up to the most recent month to identify long-term trends, seasonal patterns, 
+# and cyclical behaviors in wholesale prices.​
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -33,7 +37,7 @@ plt.plot(df_time_series.index, df_time_series, marker='o', linestyle='-', color=
 
 # Annotate policy event (example: GST)
 policy_date = pd.to_datetime("2016-07-01")
-plt.axvline(policy_date, color='crimson', linestyle='--', linewidth=1.5, label='🔺 GST Introduced')
+plt.axvline(policy_date, color='crimson', linestyle='--', linewidth=1.5, label=' GST Introduced')
 
 # Add annotation
 plt.text(policy_date, df_time_series.max()*0.98, 'GST (Jul 2016)', rotation=90,
@@ -46,11 +50,11 @@ latest_val = df_time_series.iloc[-1]
 
 # Info box
 props = dict(boxstyle="round,pad=0.4", facecolor="lavender", edgecolor="gray", alpha=0.6)
-info_text = f"📅 Latest: {latest_date}\n📈 Latest WPI: {latest_val:.2f}\n📊 Mean WPI: {mean_val:.2f}"
+info_text = f"Latest: {latest_date}\nLatest WPI: {latest_val:.2f}\n Mean WPI: {mean_val:.2f}"
 plt.gca().text(0.75, 0.15, info_text, transform=plt.gca().transAxes, fontsize=11, bbox=props)
 
 # Titles and labels
-plt.title("📈 National WPI Trend Over Time", fontsize=16, fontweight='bold')
+plt.title("National WPI Trend Over Time", fontsize=16, fontweight='bold')
 plt.xlabel("Year")
 plt.ylabel("Wholesale Price Index (WPI)")
 plt.legend()

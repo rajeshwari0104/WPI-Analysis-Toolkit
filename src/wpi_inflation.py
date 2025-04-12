@@ -1,3 +1,7 @@
+#Inflation Rate Calculation Based on WPI
+#Objective: Compute the month-over-month and year-over-year inflation rates using WPI data, providing insights into 
+# the inflationary trends in the wholesale market.
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -41,7 +45,7 @@ df_ts["YoY Inflation (%)"] = df_ts["WPI"].pct_change(periods=12) * 100
 plt.figure(figsize=(14, 6))
 plt.plot(df_ts.index, df_ts["MoM Inflation (%)"], marker='o', color="#1f77b4", label="MoM Inflation")
 plt.axhline(0, color='gray', linestyle='--', linewidth=1)
-plt.title("📅 Month-over-Month (MoM) Inflation Rate", fontsize=16)
+plt.title("Month-over-Month (MoM) Inflation Rate", fontsize=16)
 plt.xlabel("Date")
 plt.ylabel("Inflation Rate (%)")
 plt.xticks(rotation=45)
@@ -56,7 +60,7 @@ plt.show()
 plt.figure(figsize=(14, 6))
 plt.plot(df_ts.index, df_ts["YoY Inflation (%)"], marker='s', color="#d62728", label="YoY Inflation")
 plt.axhline(0, color='gray', linestyle='--', linewidth=1)
-plt.title("📆 Year-over-Year (YoY) Inflation Rate", fontsize=16)
+plt.title("Year-over-Year (YoY) Inflation Rate", fontsize=16)
 plt.xlabel("Date")
 plt.ylabel("Inflation Rate (%)")
 plt.xticks(rotation=45)
@@ -68,9 +72,9 @@ plt.show()
 # ------------------------------------------------------
 #  Summary Statistics Table
 # ------------------------------------------------------
-print("\n📊 Summary Statistics for WPI and Inflation Rates:\n")
+print("\nSummary Statistics for WPI and Inflation Rates:\n")
 try:
-    styled_table = df_ts.describe().round(2).style.set_caption("🧮 Descriptive Statistics")\
+    styled_table = df_ts.describe().round(2).style.set_caption("Descriptive Statistics")\
         .set_table_styles([{
             'selector': 'caption',
             'props': [('font-size', '16px'), ('text-align', 'left'), ('color', 'black')]
@@ -81,7 +85,7 @@ try:
     display(styled_table)
 
 except ImportError:
-    print("\n🧮 Descriptive Statistics (Basic Output):\n")
+    print("\nDescriptive Statistics (Basic Output):\n")
     print(df_ts.describe().round(2))
 
 
