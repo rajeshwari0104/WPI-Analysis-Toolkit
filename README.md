@@ -11,9 +11,7 @@ A Python-based analytical toolbox for studying Wholesale Price Index (WPI) trend
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Data Sources](#data-sources)
-- [License](#license)
 - [Contributors](#contributors)
 - [Acknowledgments](#acknowledgments)
 
@@ -55,3 +53,32 @@ cd wpi-analysis-toolkit
 
 # Install dependencies
 pip install -r requirements.txt
+
+---
+
+## 🗂️ Data Sources
+
+The data used in this toolkit is sourced from:
+
+- [Office of the Economic Adviser, Ministry of Commerce & Industry, India](https://eaindustry.nic.in/)
+- Public datasets and open government APIs
+
+Please check the `data/README.md` file for data formatting and update guidelines.
+
+---
+
+## 👩‍💻 Contributors
+
+- [Rajeshwari](https://github.com/rajeshwari0104) — Project Maintainer
+
+Contributions are welcome! Feel free to fork the repository, raise issues, or open pull requests.
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+
+- Government of India for making WPI data publicly available.
+- Contributors to open-source Python libraries like `pandas`, `matplotlib`, `seaborn`,`numpy` etc.
+- Researchers and analysts whose work inspired this toolkit.
