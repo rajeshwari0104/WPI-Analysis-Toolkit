@@ -53,7 +53,7 @@ cd wpi-analysis-toolkit
 
 # Install dependencies
 pip install -r requirements.txt
-
+```
 ---
 
 ## 🗂️ Data Sources
